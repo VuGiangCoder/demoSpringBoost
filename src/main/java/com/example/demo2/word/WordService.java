@@ -5,11 +5,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WordService {
-
-    Word word = new Word(3L, "giang", "dep trai");
     private final WordRepository wordRepository;
 
     public WordService(WordRepository wordRepository) {
@@ -21,10 +20,11 @@ public class WordService {
         return wordRepository.findAll();
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner() {
-        return args -> {
+    public void addWord(Word word) {
             wordRepository.save(word);
-        };
+    }
+
+    public Optional<Word> findByWordTarget(String word_target){
+        return  wordRepository.findByWordTarget(word_target);
     }
 }
