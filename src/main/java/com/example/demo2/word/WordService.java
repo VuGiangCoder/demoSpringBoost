@@ -9,10 +9,11 @@ import java.util.List;
 @Service
 public class WordService {
 
-    Word word = new Word(3L,"giang","dep trai");
+    Word word = new Word(3L, "giang", "dep trai");
     private final WordRepository wordRepository;
 
     public WordService(WordRepository wordRepository) {
+
         this.wordRepository = wordRepository;
     }
 

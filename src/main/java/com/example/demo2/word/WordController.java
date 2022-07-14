@@ -26,9 +26,9 @@ public class WordController {
         return wordService.getWord();
     }
 
-    @GetMapping()
+    @GetMapping("/word/add")
     public String addWord() {
-        //wordService.commandLineRunner(newW);
+        wordService.commandLineRunner();
         return "Succes";
     }
 
