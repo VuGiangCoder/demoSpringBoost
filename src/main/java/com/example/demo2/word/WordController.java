@@ -3,6 +3,7 @@ package com.example.demo2.word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -40,6 +41,7 @@ public class WordController {
     }
 
     @GetMapping("/word/find")
+    @ResponseBody
     public Optional<Word> findByWordTarget() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the word you wanna find:");

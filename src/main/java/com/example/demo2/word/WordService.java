@@ -1,5 +1,6 @@
 package com.example.demo2.word;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import java.util.Optional;
 @Service
 public class WordService {
     private final WordRepository wordRepository;
-
+    @Autowired
     public WordService(WordRepository wordRepository) {
 
         this.wordRepository = wordRepository;
