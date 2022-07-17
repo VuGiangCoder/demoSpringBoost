@@ -1,13 +1,12 @@
 package com.example.demo2.word;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 @RestController
@@ -41,13 +40,11 @@ public class WordController {
     }
 
     @GetMapping("/word/find")
-    @ResponseBody
-    public Optional<Word> findByWordTarget() {
+    public ResponseEntity<List<Word>> getWordbyWord_target() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the word you wanna find:");
+        System.out.println("Enter word_target to find word");
         String word_target = sc.nextLine();
-        return wordService.findByWordTarget(word_target);
+        return wordService.getWordbyWord_target(word_target);
     }
-
 
 }
